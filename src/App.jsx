@@ -59,6 +59,22 @@ const fileName = Date.now() + "." + extension;
       setMessage("حدث خطأ أثناء إرسال الطلب");
     } else {
       setMessage("تم إرسال الطلب بنجاح ✅");
+      const whatsappNumber = "201095042810";
+
+const whatsappText =
+  "طلب طباعة جديد%0A" +
+  "الاسم: " + customerName + "%0A" +
+  "الهاتف: " + phone + "%0A" +
+  "عدد النسخ: " + copies + "%0A" +
+  "الألوان: " + colorMode + "%0A" +
+  "طريقة الطباعة: " + printType + "%0A" +
+  "حجم الورق: " + paperSize + "%0A" +
+  "رابط الملف: " + fileUrl;
+
+window.open("https://wa.me/" + whatsappNumber + "?text=" + whatsappText, "_blank");
+
+
+
       setCustomerName("");
       setPhone("");
       setCopies(1);
