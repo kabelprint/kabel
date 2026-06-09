@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f6f7ff;
+  color: #111827;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: white;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: #4f46e5;
+}
+
+.admin-link {
+  text-decoration: none;
+  color: #4f46e5;
+  font-weight: bold;
+}
+
+.hero {
+  margin: 30px auto;
+  width: 84%;
+  border-radius: 28px;
+  padding: 70px 50px;
+  background: linear-gradient(135deg, #eef2ff, #ffffff);
+  box-shadow: 0 20px 50px rgba(79, 70, 229, 0.12);
+}
+
+.badge {
+  background: #ede9fe;
+  color: #4f46e5;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-size: 44px;
+  margin: 25px 0 15px;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #4b5563;
+}
+
+.hero-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 30px;
+  background: #4f46e5;
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.features {
+  width: 84%;
+  margin: 25px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.features div {
+  background: white;
+  padding: 22px;
+  border-radius: 18px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.order-card {
+  width: 430px;
+  max-width: 85%;
+  margin: 35px auto 70px;
+  background: white;
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+.order-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #3730a3;
+}
+
+.order-card label {
+  display: block;
+  margin: 14px 0 6px;
+  font-weight: bold;
+}
+
+.order-card input,
+.order-card select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.order-card button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: #4f46e5;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.order-card button:disabled {
+  background: #9ca3af;
+}
+
+.message {
+  text-align: center;
+  color: #16a34a;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 40px 25px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+.whatsapp-box {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.whatsapp-box a {
+  display: inline-block;
+  background: #25d366;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.25);
+}
