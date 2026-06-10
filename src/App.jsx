@@ -122,7 +122,7 @@ if (window.location.pathname === "/admin") {
   <div className="feature-card">
     <div className="feature-icon">⚡</div>
     <h3>تنفيذ سريع</h3>
-    <p>نجهز طلبك في أسرع وقت ممكن</p>
+    <p>تجهيز طلبك في أسرع وقت ممكن</p>
   </div>
 
   <a
@@ -136,6 +136,7 @@ if (window.location.pathname === "/admin") {
     <p>اضغط هنا للتواصل معنا مباشرة</p>
   </a>
 
+</section>
     <form id="order-form" className="order-card" onSubmit={handleSubmit}>
       <h2>طلب طباعة جديد</h2>
 
