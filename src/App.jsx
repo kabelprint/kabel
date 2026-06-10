@@ -104,12 +104,15 @@ if (window.location.pathname === "/admin") {
         <span className="badge">خدمة طباعة أونلاين</span>
         <h1>اطبع ملفاتك بسهولة وجودة عالية</h1>
 
-        <p>ارفع الملف، اختر المواصفات، وسنجهز طلبك في أسرع وقت.</p>
+        <p> مع مكتبة قابيل سنجهز طلبك في أسرع وقت.
+
+        </p>
         <a href="#order-form" className="hero-button">اطلب الطباعة الآن</a>
       </div>
     </section>
 
     <section className="features">
+
   <div className="feature-card">
     <div className="feature-icon">🖨️</div>
     <h3>طباعة احترافية</h3>
@@ -122,29 +125,16 @@ if (window.location.pathname === "/admin") {
     <p>نجهز طلبك في أسرع وقت ممكن</p>
   </div>
 
-  <div className="feature-card">
+  <a
+    href="https://wa.me/201095042810"
+    target="_blank"
+    rel="noreferrer"
+    className="feature-card whatsapp-card"
+  >
     <div className="feature-icon">📱</div>
     <h3>متابعة واتساب</h3>
-    <p>طلبك يوصلنا مباشرة على واتساب</p>
-  </div>
-</section>
-
-<section className="stats">
-  <div>
-    <strong>500+</strong>
-    <span>ورقة مطبوعة</span>
-  </div>
-
-  <div>
-    <strong>24h</strong>
-    <span>تنفيذ سريع</span>
-  </div>
-
-  <div>
-    <strong>100%</strong>
-    <span>سهولة في الطلب</span>
-  </div>
-</section>
+    <p>اضغط هنا للتواصل معنا مباشرة</p>
+  </a>
 
     <form id="order-form" className="order-card" onSubmit={handleSubmit}>
       <h2>طلب طباعة جديد</h2>

@@ -286,3 +286,11 @@ td {
     margin-top: 20px;
   }
 }
+.hero h1 {
+  margin-bottom: 25px;
+}
+
+.hero p {
+  margin-top: 15px;
+  line-height: 2;
+}
