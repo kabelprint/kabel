@@ -31,7 +31,7 @@ const [address, setAddress] = useState("");
     .substring(2)}.${extension}`;
 
   const { error: uploadError } = await supabase.storage
-    .from("order-files")
+    .from("order - files")
     .upload(fileName, file);
 
   if (uploadError) {
