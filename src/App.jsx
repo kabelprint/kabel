@@ -9,7 +9,7 @@ function App() {
   const [colorMode, setColorMode] = useState("أبيض وأسود");
   const [printType, setPrintType] = useState("وش فقط");
   const [paperSize, setPaperSize] = useState("A4");
-  const [file, setFile] = useState(null);
+  const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -21,28 +21,32 @@ const [address, setAddress] = useState("");
     setLoading(true);
     setMessage("");
 
-    let fileUrl = "";
+    let fileUrls = [];
 
-    if (file) {
-     const extension = file.name.split(".").pop();
-const fileName = Date.now() + "." + extension;
+    if (files.length > 0) {
+     for (const file of files) {
+  const extension = file.name.split(".").pop();
+  const fileName = `${Date.now()}-${Math.random()
+    .toString(36)
+    .substring(2)}.${extension}`;
 
-      const { error: uploadError } = await supabase.storage
-        .from("order - files")
-        .upload(fileName, file);
+  const { error: uploadError } = await supabase.storage
+    .from("order-files")
+    .upload(fileName, file);
 
-      if (uploadError) {
-        console.log(uploadError);
-        setMessage("حدث خطأ أثناء رفع الملف");
-        setLoading(false);
-        return;
-      }
+  if (uploadError) {
+    console.log(uploadError);
+    setMessage("حدث خطأ أثناء رفع أحد الملفات");
+    setLoading(false);
+    return;
+  }
 
-      const { data } = supabase.storage
-        .from("order - files")
-        .getPublicUrl(fileName);
+  const { data } = supabase.storage
+    .from("order-files")
+    .getPublicUrl(fileName);
 
-      fileUrl = data.publicUrl;
+  fileUrls.push(data.publicUrl);
+}
     }
 
     const { error } = await supabase.from("orders").insert({
@@ -54,7 +58,7 @@ const fileName = Date.now() + "." + extension;
       paper_size: paperSize,
       delivery_type: deliveryType,
 address: address,
-      file_url: fileUrl,
+      file_url: fileUrls.join("\n"),
       status: "pending",
     });
 
@@ -157,7 +161,8 @@ if (window.location.pathname === "/admin") {
       <label>ارفع الملف</label>
       <input
         type="file"
-        onChange={(e) => setFile(e.target.files[0])}
+        multiple
+        onChange={(e) => setFiles(Array.from(e.target.files))}
         required
       />
 
