@@ -18,7 +18,7 @@ const [address, setAddress] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const whatsappWindow = window.open("", "_blank");
+    
     setLoading(true);
     setMessage("جاري رفع الملفات، برجاء الانتظار...");
     
@@ -40,6 +40,7 @@ const [address, setAddress] = useState("");
     console.log(uploadError);
     setMessage("حدث خطأ أثناء رفع أحد الملفات");
     setLoading(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
     return;
   }
 
@@ -83,22 +84,18 @@ const whatsappText =
   "حجم الورق: " + paperSize + "%0A" +
   "روابط الملفات: " + fileUrls.join("%0A");
 
-const whatsappWindow = window.open("", "_blank");
 
-const whatsappUrl =
-  "https://wa.me/" + whatsappNumber + "?text=" + whatsappText;
 
-if (whatsappWindow) {
-  whatsappWindow.location.href = whatsappUrl;
-} else {
-  window.location.href = whatsappUrl;
-}
+
 
 
       setCustomerName("");
       setPhone("");
       setCopies(1);
       setFiles([]);
+      setAddress("");
+      setLoading(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     setLoading(false);
