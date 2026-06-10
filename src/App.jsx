@@ -103,25 +103,48 @@ if (window.location.pathname === "/admin") {
       <div>
         <span className="badge">خدمة طباعة أونلاين</span>
         <h1>اطبع ملفاتك بسهولة وجودة عالية</h1>
+
         <p>ارفع الملف، اختر المواصفات، وسنجهز طلبك في أسرع وقت.</p>
         <a href="#order-form" className="hero-button">اطلب الطباعة الآن</a>
       </div>
     </section>
 
     <section className="features">
-      <div className="whatsapp-box">
-  <a
-    href="https://wa.me/201095042810"
-    target="_blank"
-  >
-    تواصل واتساب
-  </a>
-</div>
-      <div>⚡ تنفيذ سريع</div>
-      <div>🎨 جودة طباعة عالية</div>
-      <div>📄 مقاسات متنوعة</div>
-      
-    </section>
+  <div className="feature-card">
+    <div className="feature-icon">🖨️</div>
+    <h3>طباعة احترافية</h3>
+    <p>جودة عالية ووضوح ممتاز لكل ملفاتك</p>
+  </div>
+
+  <div className="feature-card">
+    <div className="feature-icon">⚡</div>
+    <h3>تنفيذ سريع</h3>
+    <p>نجهز طلبك في أسرع وقت ممكن</p>
+  </div>
+
+  <div className="feature-card">
+    <div className="feature-icon">📱</div>
+    <h3>متابعة واتساب</h3>
+    <p>طلبك يوصلنا مباشرة على واتساب</p>
+  </div>
+</section>
+
+<section className="stats">
+  <div>
+    <strong>500+</strong>
+    <span>ورقة مطبوعة</span>
+  </div>
+
+  <div>
+    <strong>24h</strong>
+    <span>تنفيذ سريع</span>
+  </div>
+
+  <div>
+    <strong>100%</strong>
+    <span>سهولة في الطلب</span>
+  </div>
+</section>
 
     <form id="order-form" className="order-card" onSubmit={handleSubmit}>
       <h2>طلب طباعة جديد</h2>
