@@ -70,25 +70,7 @@ address: address,
       setMessage("حدث خطأ أثناء إرسال الطلب");
     } else {
       setMessage("تم إرسال الطلب بنجاح ✅");
-      const whatsappNumber = "201095042810";
-
-const whatsappText =
-  "طلب طباعة جديد%0A" +
-  "الاسم: " + customerName + "%0A" +
-  "الهاتف: " + phone + "%0A" +
-  "عدد النسخ: " + copies + "%0A" +
-  "الألوان: " + colorMode + "%0A" +
-  "طريقة الطباعة: " + printType + "%0A" +
-  "طريقة الاستلام: " + deliveryType + "%0A" +
-"العنوان: " + address + "%0A" +
-  "حجم الورق: " + paperSize + "%0A" +
-  "روابط الملفات: " + fileUrls.join("%0A");
-
-
-
-
-
-
+      
       setCustomerName("");
       setPhone("");
       setCopies(1);
@@ -98,7 +80,7 @@ const whatsappText =
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    setLoading(false);
+  
   }
 if (window.location.pathname === "/admin") {
   return <Admin />;
