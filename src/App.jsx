@@ -18,6 +18,7 @@ const [address, setAddress] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
+    const whatsappWindow = window.open("", "_blank");
     setLoading(true);
     setMessage("جاري رفع الملفات، برجاء الانتظار...");
     
@@ -82,9 +83,16 @@ const whatsappText =
   "حجم الورق: " + paperSize + "%0A" +
   "روابط الملفات: " + fileUrls.join("%0A");
 
-window.location.href =
+const whatsappWindow = window.open("", "_blank");
+
+const whatsappUrl =
   "https://wa.me/" + whatsappNumber + "?text=" + whatsappText;
 
+if (whatsappWindow) {
+  whatsappWindow.location.href = whatsappUrl;
+} else {
+  window.location.href = whatsappUrl;
+}
 
 
       setCustomerName("");
