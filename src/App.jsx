@@ -13,6 +13,9 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
+  const [deliveryType, setDeliveryType] = useState("استلام من المكتبة");
+const [address, setAddress] = useState("");
+
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
@@ -49,7 +52,8 @@ const fileName = Date.now() + "." + extension;
       color_mode: colorMode,
       print_type: printType,
       paper_size: paperSize,
-      delivery_type: "استلام من المكتبة",
+      delivery_type: deliveryType,
+address: address,
       file_url: fileUrl,
       status: "pending",
     });
@@ -68,6 +72,8 @@ const whatsappText =
   "عدد النسخ: " + copies + "%0A" +
   "الألوان: " + colorMode + "%0A" +
   "طريقة الطباعة: " + printType + "%0A" +
+  "طريقة الاستلام: " + deliveryType + "%0A" +
+"العنوان: " + address + "%0A" +
   "حجم الورق: " + paperSize + "%0A" +
   "رابط الملف: " + fileUrl;
 
@@ -167,6 +173,33 @@ if (window.location.pathname === "/admin") {
         <option>A4</option>
         <option>A3</option>
       </select>
+      <label>طريقة الاستلام</label>
+
+<select
+  value={deliveryType}
+  onChange={(e) => setDeliveryType(e.target.value)}
+>
+  <option value="استلام من المكتبة">
+    استلام من المكتبة
+  </option>
+
+  <option value="توصيل للبيت">
+    توصيل للبيت
+  </option>
+</select>
+
+{deliveryType === "توصيل للبيت" && (
+  <>
+    <label>العنوان</label>
+
+    <input
+      type="text"
+      placeholder="اكتب عنوانك بالتفصيل"
+      value={address}
+      onChange={(e) => setAddress(e.target.value)}
+    />
+  </>
+)}
 
       <button type="submit" disabled={loading}>
         {loading ? "جاري إرسال الطلب..." : "إرسال الطلب"}
