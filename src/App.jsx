@@ -45,7 +45,7 @@ const [address, setAddress] = useState("");
   }
 
   const { data } = supabase.storage
-    .from("order-files")
+    .from("order - files")
     .getPublicUrl(fileName);
 
   fileUrls.push(data.publicUrl);
