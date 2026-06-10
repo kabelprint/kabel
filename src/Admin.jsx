@@ -13,10 +13,7 @@ function Admin() {
 
     if (!error) setOrders(data);
     else console.log(error);
-    const [password, setPassword] = useState("");
-const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-const ADMIN_PASSWORD = "100200**";
+    
   }
   const [password, setPassword] = useState("");
 const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -92,23 +89,20 @@ if (!isLoggedIn) {
 
       <table border="1" cellPadding="10">
         <thead>
-          <tr>
-            <th>العميل</th>
-            <th>الهاتف</th>
-            <th>النسخ</th>
-            <th>الألوان</th>
-            <th>الطباعة</th>
-            <th>الملف</th>
-            <th>الحالة</th>
-            
-            <th>تغيير الحالة</th>
-            <td>
-  <button onClick={() => deleteOrder(order.id)}>
-    حذف
-  </button>
-</td>
-          </tr>
-        </thead>
+  <tr>
+    <th>العميل</th>
+    <th>الهاتف</th>
+    <th>النسخ</th>
+    <th>الألوان</th>
+    <th>الطباعة</th>
+    <th>طريقة الاستلام</th>
+    <th>العنوان</th>
+    <th>الملف</th>
+    <th>الحالة</th>
+    <th>تغيير الحالة</th>
+    <th>حذف</th>
+  </tr>
+</thead>
 
         <tbody>
           {orders.map((order) => (
@@ -118,6 +112,8 @@ if (!isLoggedIn) {
               <td>{order.copies}</td>
               <td>{order.color_mode}</td>
               <td>{order.print_type}</td>
+              <td>{order.delivery_type}</td>
+              <td>{order.address || "-"}</td>
               <td>
                 {order.file_url ? (
                   <a href={order.file_url} target="_blank">
